@@ -14,7 +14,7 @@ module.exports = function (nemo) {
         if (valid) {
           return nemo.view.login.logoutWait(10000);
         } else {
-          return nemo.view.login.loginErrorBox(10000);
+          return nemo.view.login.loginErrorBoxWait(10000);
         }
       });
 
