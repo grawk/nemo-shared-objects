@@ -1,6 +1,6 @@
 module.exports = function (nemo) {
-	return {
-		"login": function (user, valid) {
+  return {
+    "login": function (user, valid) {
       return nemo.view.login.emailVisible().then(function(isVisible) {
         if (!isVisible) {
           return nemo.view.login.showLoginButton().click();
@@ -12,15 +12,15 @@ module.exports = function (nemo) {
         nemo.view.login.password().sendKeys(user.password);
         nemo.view.login.button().click();
         if (valid) {
-          return nemo.view.login.logoutWait(10000);
+          nemo.view.login.logoutWait(10000, "couldn't find logout link");
         } else {
-          return nemo.view.login.loginErrorBoxWait(10000);
+          nemo.view.login.loginErrorBoxWait(10000, "couldn't find loginErrorBox");
         }
       });
 
-		},
-		"logout": function() {
-		  return nemo.view.login.logout().click();
-		}
-	};
+    },
+    "logout": function() {
+      return nemo.view.login.logout().click();
+    }
+  };
 };
