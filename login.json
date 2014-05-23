@@ -12,7 +12,7 @@
     "type": "id"
   },
   "button": {
-    "locator": "input[type='submit'][name='submit.x']",
+    "locator": "input[type='submit'][name='submit']",
     "type": "css"
   },
   "logout": {
