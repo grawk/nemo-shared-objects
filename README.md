@@ -18,26 +18,22 @@ Here is an example spec
 /*global describe:true, it:true, before:true, after:true */
 'use strict';
 
-var conf = require('nemo-shared-objects/config'),
-  nemoFactory = require('nemo-mocha-factory'),
-  setup = conf.setup,
-  plugins = conf.plugins,
+var nemoFactory = require('nemo-mocha-factory'),
+  conf = require('nemo-shared-objects/config'),
   loginFlow = require('nemo-shared-objects/flow/login'),
   user = {
     'emailAddress': 'me@mine.com',
     'password': '1234abcd'
-  }
-nemo = {};
+  };
 
 describe('Nemo @paypalSuite@', function() {
 
   nemoFactory({
-    'plugins': plugins,
-    'setup': setup,
-    'context': nemo
+    'plugins': conf.plugins,
+    'setup': conf.setup
   });
 
-  it('will @tryLoginAndFail@', function(done) {
+  it('will @tellMyLifeStory@', function(done) {
     nemo.driver.get('https://www.paypal.com');
     loginFlow(nemo).login(user, false).then(function() {
       console.log('failed login as expected');
