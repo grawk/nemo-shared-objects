@@ -18,5 +18,9 @@
   "logout": {
     "locator": "li.logout",
     "type": "css"
+  },
+  "loginErrorBox": {
+    "locator" : ".form-signin .alert.alert-warning",
+    "type": "css"
   }
 }

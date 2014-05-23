@@ -1,6 +1,6 @@
 module.exports = function (nemo) {
 	return {
-		"login": function (user) {
+		"login": function (user, valid) {
       return nemo.view.login.emailVisible().then(function(isVisible) {
         if (!isVisible) {
           return nemo.view.login.showLoginButton().click();
@@ -11,7 +11,11 @@ module.exports = function (nemo) {
         nemo.view.login.email().sendKeys(user.emailAddress);
         nemo.view.login.password().sendKeys(user.password);
         nemo.view.login.button().click();
-        return nemo.view.login.logoutWait(10000);
+        if (valid) {
+          return nemo.view.login.logoutWait(10000);
+        } else {
+          return nemo.view.login.loginErrorBox(10000);
+        }
       });
 
 		},
