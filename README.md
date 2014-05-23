@@ -19,11 +19,7 @@ Here is an example spec
 'use strict';
 
 var nemoFactory = require('nemo-mocha-factory'),
-  shared = require('nemo-shared-objects'),
-  user = {
-    'emailAddress': 'me@mine.com',
-    'password': '1234abcd'
-  };
+  shared = require('nemo-shared-objects');
 describe('Nemo @paypalSuite@', function() {
   nemoFactory({
     'plugins': shared.config.plugins,
@@ -31,7 +27,7 @@ describe('Nemo @paypalSuite@', function() {
   });
   it('will @tryLoginWithInvalidCredentials@', function(done) {
     nemo.driver.get('https://www.paypal.com');
-    shared.loginFlow(nemo).login(user, false).then(function() {
+    shared.loginFlow(nemo).login(shared.userData.invalid, false).then(function() {
       console.log('failed login as expected');
       done();
     }, function(err) {
