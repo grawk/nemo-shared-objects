@@ -14,10 +14,6 @@
     "PayPal",
     "locators"
   ],
-  "peerDependencies": {
-    "nemo": "^0.2",
-    "nemo-view": "^0.2"
-  },
   "author": "@grawk",
   "license": "Apache 2"
 }
