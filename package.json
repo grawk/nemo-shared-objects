@@ -1,6 +1,6 @@
 {
   "name": "nemo-shared-objects",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "PayPal Nemo locators and lib",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
